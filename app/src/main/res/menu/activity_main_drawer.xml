@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_apartment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:icon="@drawable/apartmenticon"
+            android:title="@string/menu_apartment" />
+        <item
+            android:id="@+id/nav_condo_apartment"
+            android:icon="@drawable/condoicon"
+            android:title="@string/menu_condo_apartment" />
+        <item
+            android:id="@+id/nav_semi_detached_home"
+            android:icon="@drawable/semidetachedicon"
+            android:title="@string/menu_semi_detached_home" />
+        <item
+            android:id="@+id/nav_detached_home"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:icon="@drawable/detachedicon"
+            android:title="@string/menu_detached_home" />
+        <item
+            android:id="@+id/nav_town_house"
+            android:icon="@drawable/townhouseicon"
+            android:title="@string/menu_town_house" />
+    </group>
+</menu>

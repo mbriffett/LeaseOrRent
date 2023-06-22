@@ -1,0 +1,72 @@
+package com.example.matthewbriffett_comp304lab2_exercise1.ui.selected_homes
+
+import android.os.Bundle
+import android.view.LayoutInflater
+import android.view.MotionEvent
+import android.view.View
+import android.view.ViewGroup
+import android.widget.Toast
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
+import androidx.lifecycle.Observer
+import androidx.recyclerview.selection.ItemDetailsLookup
+import androidx.recyclerview.selection.OnItemActivatedListener
+import androidx.recyclerview.selection.SelectionTracker
+import androidx.recyclerview.selection.StableIdKeyProvider
+import androidx.recyclerview.selection.StorageStrategy
+//this version of selected homes fragment maniuplates the recycker view contents on selection (not useful for what I was doing but useful overall)
+
+import androidx.recyclerview.widget.RecyclerView
+import com.example.matthewbriffett_comp304lab2_exercise1.adapter.HomeAdapter
+import com.example.matthewbriffett_comp304lab2_exercise1.adapter.SharedViewModel
+import com.example.matthewbriffett_comp304lab2_exercise1.data.DataSource
+import com.example.matthewbriffett_comp304lab2_exercise1.data.Home
+import com.example.matthewbriffett_comp304lab2_exercise1.databinding.FragmentSelectedHomesBinding
+
+
+class SelectedHomeFragment : Fragment(){
+    private val viewModel: SharedViewModel by activityViewModels()
+    private var _binding: FragmentSelectedHomesBinding? = null
+    private var homeList: List<Home> = emptyList()
+    // This property is only valid between onCreateView and
+    // onDestroyView.
+    private val binding get() = _binding!!
+
+
+
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View {
+        _binding = FragmentSelectedHomesBinding.inflate(inflater, container, false)
+        val root: View = binding.root
+
+        //get RecyclerView and set data binding to appropriate recycler
+        val recyclerView: RecyclerView = binding.selectedHomesRecycler
+
+        // Create a single instance of the HomeAdapter
+        var homeAdapter = context?.let { HomeAdapter(it, homeList.toList(), viewModel, viewLifecycleOwner) }
+        recyclerView.adapter = homeAdapter
+
+        //observe list from sharedViewModel to get selected homes to show
+        viewModel.selectedHomeData.observe(viewLifecycleOwner, Observer { newList ->
+            homeList += newList.toList()
+
+            // Update the adapter's data instead of creating a new instance
+            if (homeAdapter != null) {
+                homeAdapter.setData(homeList.toList())
+            }
+            homeAdapter?.notifyDataSetChanged()
+        })
+
+        return root
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        //remove selections from sharedModelView on return (keeps items from showing up again/if nothing is selected on return)
+       // viewModel.selectedHomeData.value = emptyList()
+        _binding = null
+    }
+}

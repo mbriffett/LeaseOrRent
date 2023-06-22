@@ -1,0 +1,85 @@
+both of the below below classes extend the RecyclerView.Adapter
+
+This is for getting a radio group to work across items in a recycler view
+class ElementListAdapter(private val context: Context, private val elements: List<Element>) :
+    RecyclerView.Adapter<ElementListAdapter.ViewHolder>() {
+
+    private val state = IntArray(elements.size) { -1 }
+
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
+        val view = LayoutInflater.from(parent.context)
+            .inflate(R.layout.list_item_layout, parent, false)
+        return ViewHolder(view)
+    }
+
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+        val element = elements[position]
+        holder.tvTitle.text = element.title
+        holder.tvDescription.text = element.description
+
+        if (element.isHeader) {
+            holder.radioGroup.visibility = View.GONE
+        } else {
+            holder.radioGroup.visibility = View.VISIBLE
+        }
+
+        setRadio(holder, state[position])
+
+        holder.rb1.setOnClickListener {
+            state[position] = 0
+            setRadio(holder, state[position])
+        }
+        holder.rb2.setOnClickListener {
+            state[position] = 1
+            setRadio(holder, state[position])
+        }
+        holder.rb3.setOnClickListener {
+            state[position] = 2
+            setRadio(holder, state[position])
+        }
+        holder.rb4.setOnClickListener {
+            state[position] = 3
+            setRadio(holder, state[position])
+        }
+    }
+
+    private fun setRadio(holder: ViewHolder, selection: Int) {
+        holder.rb1.isChecked = false
+        holder.rb2.isChecked = false
+        holder.rb3.isChecked = false
+        holder.rb4.isChecked = false
+
+        when (selection) {
+            0 -> holder.rb1.isChecked = true
+            1 -> holder.rb2.isChecked = true
+            2 -> holder.rb3.isChecked = true
+            3 -> holder.rb4.isChecked = true
+        }
+    }
+
+    override fun getItemCount() = elements.size
+
+    class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+        val tvTitle: TextView = itemView.findViewById(R.id.title)
+        val tvDescription: TextView = itemView.findViewById(R.id.description)
+        val radioGroup: RadioGroup = itemView.findViewById(R.id.radioGroup)
+        val rb1: RadioButton = itemView.findViewById(R.id.rb1)
+        val rb2: RadioButton = itemView.findViewById(R.id.rb2)
+        val rb3: RadioButton = itemView.findViewById(R.id.rb3)
+        val rb4: RadioButton = itemView.findViewById(R.id.rb4)
+    }
+}
+
+
+
+this is for setting unique ids on each view in item view holder of recycler view.  requires getId function in data class (item's actual class, home class in the lab). also requires passing unique id to the objet (ie Id is am argument of any home object that must be provided on instantiation).  Worked in my lab, see for self written example
+unu=ique ids recycler view class MyAdapter : RecyclerView.Adapter<MyAdapter.MyViewHolder>() {
+    init {
+        setHasStableIds(true) // very important
+    }
+
+    override fun getItemId(position: Int): Long {
+        return itemsList[position].getId()
+    }
+}
+

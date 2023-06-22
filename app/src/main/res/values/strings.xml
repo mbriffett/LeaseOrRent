@@ -1,0 +1,208 @@
+<resources>
+    <string name="app_name">Lease or Rent</string>
+    <string name="title_activity_home_select_menu">HomeSelectMenu</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="main_enter">Enter</string>
+    <string name="menu_home">Home</string>
+    <string name="menu_semi_detached_home">Semi-Detached Home</string>
+    <string name="menu_detached_home">Detached Home</string>
+    <string name="menu_apartment">Apartment</string>
+    <string name="menu_condo_apartment">Condominium Apartment</string>
+    <string name="menu_town_house">Town House</string>
+
+    <string name="menu_selected_homes">Selected Homes</string>
+    <string name="menu_choose_pay">Choose Payment</string>
+    <string name="menu_pay_details">Enter Details</string>
+
+    <string name="choose_credit">Credit</string>
+    <string name="choose_debit">Debit</string>
+    <string name="choose_cash">Cash</string>
+
+    <!--Apartments -->
+    <string name="Home1">Cozy studio apartment in the heart of the city</string>
+    <string name="Home2">Spacious one-bedroom apartment with modern amenities</string>
+    <string name="Home3">Bright and airy two-bedroom apartment with balcony</string>
+    <string name="Home4">Luxurious penthouse apartment with stunning views</string>
+    <string name="Home5">Charming loft apartment in a historic building</string>
+    <string name="Home6">Newly renovated apartment with open floor plan</string>
+    <string name="Home7">Pet-friendly apartment with private garden</string>
+    <string name="Home8">Fully furnished apartment in a convenient location</string>
+    <string name="Home9">Quiet and comfortable apartment in a residential area</string>
+    <string name="Home10">Elegant apartment with high-end finishes and appliances</string>
+
+    <string name="Address1">123 Elm St.</string>
+    <string name="Address2">456 Oak Ave.</string>
+    <string name="Address3">789 Maple Blvd.</string>
+    <string name="Address4">321 Pine Rd.</string>
+    <string name="Address5">654 Birch Ln.</string>
+    <string name="Address6">987 Cedar Dr.</string>
+    <string name="Address7">246 Spruce Way</string>
+    <string name="Address8">369 Willow Ct.</string>
+    <string name="Address9">159 Poplar St.</string>
+    <string name="Address10">753 Aspen Ave.</string>
+
+    <string name="Price1">$1,200/month</string>
+    <string name="Price2">$1,500/month</string>
+    <string name="Price3">$1,800/month</string>
+    <string name="Price4">$2,500/month</string>
+    <string name="Price5">$1,400/month</string>
+    <string name="Price6">$1,600/month</string>
+    <string name="Price7">$1,700/month</string>
+    <string name="Price8">$1,900/month</string>
+    <string name="Price9">$2,000/month</string>
+    <string name="Price10">$2,300/month</string>
+
+
+    <!--Condos-->
+    <string name="Home11">Modern condo with resort-style amenities</string>
+    <string name="Home12">Stylish condo in a sought-after location</string>
+    <string name="Home13">Spacious condo with breathtaking views</string>
+    <string name="Home14">Luxury condo with top-of-the-line finishes</string>
+    <string name="Home15">Beautifully designed condo with open floor plan</string>
+    <string name="Home16">Condo with private balcony and outdoor space</string>
+    <string name="Home17">Condo in a building with 24/7 concierge service</string>
+    <string name="Home18">Condo with access to fitness center and pool</string>
+    <string name="Home19">Pet-friendly condo in a walkable neighborhood</string>
+    <string name="Home20">Condo with convenient access to public transportation</string>
+
+    <string name="Address11">111 Beachfront Dr.</string>
+    <string name="Address12">222 Oceanview Ln.</string>
+    <string name="Address13">333 Seaside Blvd.</string>
+    <string name="Address14">444 Harborview Rd.</string>
+    <string name="Address15">555 Marina Way</string>
+    <string name="Address16">666 Coastal Ct.</string>
+    <string name="Address17">777 Shoreline St.</string>
+    <string name="Address18">888 Waterfront Ave.</string>
+    <string name="Address19">999 Bayview Dr.</string>
+    <string name="Address20">1010 Islandview Ln.</string>
+
+    <string name="Price11">$350,000</string>
+    <string name="Price12">$400,000</string>
+    <string name="Price13">$450,000</string>
+    <string name="Price14">$500,000</string>
+    <string name="Price15">$550,000</string>
+    <string name="Price16">$600,000</string>
+    <string name="Price17">$650,000</string>
+    <string name="Price18">$700,000</string>
+    <string name="Price19">$750,000</string>
+    <string name="Price20">$800,000</string>
+
+    <!--Semi-Detached-->
+    <string name="Home21">Charming semi-detached home with private yard</string>
+    <string name="Home22">Newly built semi-detached home with modern design</string>
+    <string name="Home23">Semi-detached home in a family-friendly neighborhood</string>
+    <string name="Home24">Spacious semi-detached home with plenty of storage</string>
+    <string name="Home25">Semi-detached home with finished basement and garage</string>
+    <string name="Home26">Beautifully maintained semi-detached home with character</string>
+    <string name="Home27">Semi-detached home with large deck for entertaining</string>
+    <string name="Home28">Semi-detached home with updated kitchen and bathrooms</string>
+    <string name="Home29">Semi-detached home close to schools and parks</string>
+    <string name="Home30">Semi-detached home with easy access to highways</string>
+
+    <string name="Address21">12 North St.</string>
+    <string name="Address22">34 East Ave.</string>
+    <string name="Address23">56 South Blvd.</string>
+    <string name="Address24">78 West Rd.</string>
+    <string name="Address25">90 Central Ln.</string>
+    <string name="Address26">21 Park Dr.</string>
+    <string name="Address27">43 Forest Way</string>
+    <string name="Address28">65 Garden Ct.</string>
+    <string name="Address29">87 Meadow St.</string>
+    <string name="Address30">09 Field Ave.</string>
+
+    <string name="Price21">$450,000</string>
+    <string name="Price22">$475,000</string>
+    <string name="Price23">$500,000</string>
+    <string name="Price24">$525,000</string>
+    <string name="Price25">$550,000</string>
+    <string name="Price26">$575,000</string>
+    <string name="Price27">$600,000</string>
+    <string name="Price28">$625,000</string>
+    <string name="Price29">$650,000</string>
+    <string name="Price30">$675,000</string>
+
+    <!--Detached-->
+    <string name="Home31">Stunning detached home on a large lot</string>
+    <string name="Home32">Detached home with pool and outdoor living space</string>
+    <string name="Home33">Custom-built detached home with high-end finishes</string>
+    <string name="Home34">Detached home in a quiet and secluded location</string>
+    <string name="Home35">Spacious detached home perfect for families</string>
+    <string name="Home36">Detached home with separate guest house or studio</string>
+    <string name="Home37">Historic detached home with original features preserved</string>
+    <string name="Home38">Detached home with large workshop or garage space</string>
+    <string name="Home39">Detached home on a cul-de-sac in a great neighborhood</string>
+    <string name="Home40">Eco-friendly detached home with solar panels and rainwater collection system </string>
+
+    <string name="Address31">100 Grandview Dr.</string>
+    <string name="Address32">200 Hilltop Ln.</string>
+    <string name="Address33">300 Summit Blvd.</string>
+    <string name="Address34">400 Mountainview Rd.</string>
+    <string name="Address35">500 Skyline Way</string>
+    <string name="Address36">600 Crestview Ct.</string>
+    <string name="Address37">700 Highpoint St.</string>
+    <string name="Address38">800 Overlook Ave.</string>
+    <string name="Address39">900 Ridgeline Dr.</string>
+    <string name="Address40">1000 Peakview Ln.</string>
+
+    <string name="Price31">$800,000</string>
+    <string name="Price32">$850,000</string>
+    <string name="Price33">$900,000</string>
+    <string name="Price34">$950,000</string>
+    <string name="Price35">$1 million </string>
+    <string name="Price36">$1 million </string>
+    <string name="Price37">$1 million </string>
+    <string name="Price38">$1 million </string>
+    <string name="Price39">$1 million </string>
+    <string name="Price40">$1 million </string>
+
+    <!--TownHouses-->
+    <string name="Home41">Modern townhouse in a gated community</string>
+    <string name="Home42">Spacious townhouse with private rooftop terrace</string>
+    <string name="Home43">Townhouse with open floor plan and high ceilings</string>
+    <string name="Home44">Beautifully renovated townhouse in historic district</string>
+    <string name="Home45">Townhouse with attached garage and private driveway</string>
+    <string name="Home46">Pet-friendly townhouse community with shared green space</string>
+    <string name="Home47">Townhouse within walking distance to shops and restaurants</string>
+    <string name="Home48">Townhouse community with pool, clubhouse, and fitness center</string>
+    <string name="Home49">Townhouse on quiet street with private backyard</string>
+    <string name="Home50">Townhouse with finished basement and plenty of storage</string>
+
+    <string name="Address41">A1 Lakeside Dr.</string>
+    <string name="Address42">A2 Riverside Ln.</string>
+    <string name="Address43">A3 Brookside Blvd.</string>
+    <string name="Address44">A4 Streamview Rd.</string>
+    <string name="Address45">A5 Waterfall Way</string>
+    <string name="Address46">A6 Pondview Ct.</string>
+    <string name="Address47">A7 Spring St.</string>
+    <string name="Address48">A8 Fountain Ave.</string>
+    <string name="Address49">A9 Cascade Dr.</string>
+    <string name="Address50">A10 Riverbend Ln.</string>
+
+    <string name="Price41">$400,000</string>
+    <string name="Price42">$425,000</string>
+    <string name="Price43">$450,000</string>
+    <string name="Price44">$475,000</string>
+    <string name="Price45">$500,000</string>
+    <string name="Price46">$525,000</string>
+    <string name="Price47">$550,000</string>
+    <string name="Price48">$575,000</string>
+    <string name="Price49">$600,000</string>
+    <string name="Price50">$625,000</string>
+
+    <!--PayDetails-->
+    <string name="full_name_hint">Full Name</string>
+    <string name="card_number_hint">Credit/Debit Card Number</string>
+    <string name="favorite_sport_hint">Favorite Sport</string>
+    <string name="favorite_team_hint">Favorite Team</string>
+    <string name="favorite_food_hint">Favorite Food</string>
+
+    <!--I keep finding these things til next April... Every year-->
+    <string name="Hello">Hi from the Dev -MB :)</string>
+
+</resources>

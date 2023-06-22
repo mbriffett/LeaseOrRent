@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_home">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.example.matthewbriffett_comp304lab2_exercise1.ui.home.HomeFragment"
+        android:label="@string/menu_home"
+        tools:layout="@layout/fragment_home" />
+
+    <fragment
+        android:id="@+id/nav_apartment"
+        android:tag="apt_frag"
+        android:name="com.example.matthewbriffett_comp304lab2_exercise1.ui.apartment.ApartmentFragment"
+        android:label="@string/menu_apartment"
+        tools:layout="@layout/fragment_apartment" >
+
+        <action
+            android:id="@+id/action_apartmentFragment_to_selectedHomeFragment"
+            app:destination="@id/nav_selected_homes" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_condo_apartment"
+        android:name="com.example.matthewbriffett_comp304lab2_exercise1.ui.condo.CondoFragment"
+        android:label="@string/menu_condo_apartment"
+        tools:layout="@layout/fragment_condo" >
+
+        <action
+            android:id="@+id/action_condoFragment_to_selectedHomeFragment"
+            app:destination="@id/nav_selected_homes" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_semi_detached_home"
+        android:name="com.example.matthewbriffett_comp304lab2_exercise1.ui.semi_detached.SemiDetachedFragment"
+        android:label="@string/menu_semi_detached_home"
+        tools:layout="@layout/fragment_semi_detached" >
+
+        <action
+            android:id="@+id/action_semiDetachedFragment_to_selectedHomeFragment"
+            app:destination="@id/nav_selected_homes" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_detached_home"
+        android:name="com.example.matthewbriffett_comp304lab2_exercise1.ui.detached.DetachedFragment"
+        android:label="@string/menu_detached_home"
+        tools:layout="@layout/fragment_detached" >
+
+        <action
+            android:id="@+id/action_detachedFragment_to_selectedHomeFragment"
+            app:destination="@id/nav_selected_homes" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_town_house"
+        android:name="com.example.matthewbriffett_comp304lab2_exercise1.ui.town_house.TownHouseFragment"
+        android:label="@string/menu_town_house"
+        tools:layout="@layout/fragment_town_house" >
+
+        <action
+            android:id="@+id/action_townHouseFragment_to_selectedHomeFragment"
+            app:destination="@id/nav_selected_homes" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_selected_homes"
+        android:name="com.example.matthewbriffett_comp304lab2_exercise1.ui.selected_homes.SelectedHomeFragment"
+        android:label="@string/menu_selected_homes"
+        tools:layout="@layout/fragment_selected_homes">
+        <action
+            android:id="@+id/action_selectedHomeFragment_to_choosePayFragment"
+            app:destination="@id/nav_choose_pay" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_choose_pay"
+        android:name="com.example.matthewbriffett_comp304lab2_exercise1.ui.choose_pay.ChoosePayFragment"
+        android:label="@string/menu_choose_pay"
+        tools:layout="@layout/fragment_choose_pay" >
+        <action
+            android:id="@+id/action_choosePayFragment_to_payDetailsFragment"
+            app:destination="@id/nav_pay_details" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_pay_details"
+        android:name="com.example.matthewbriffett_comp304lab2_exercise1.ui.payment.PayDetailsFragment"
+        android:label="@string/menu_pay_details"
+        tools:layout="@layout/fragment_pay_details" />
+</navigation>

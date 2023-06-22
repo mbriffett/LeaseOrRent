@@ -1,0 +1,74 @@
+stuff for selection tracker
+
+whole package:
+
+package com.example.matthewbriffett_comp304lab2_exercise1.details_lookup
+
+import android.view.MotionEvent
+import androidx.recyclerview.selection.ItemDetailsLookup
+import androidx.recyclerview.widget.RecyclerView
+import com.example.matthewbriffett_comp304lab2_exercise1.adapter.HomeAdapter
+
+
+//ItemDetailsLookup object with a function which returns an ItemDetails object from the ItemViewHolder Class which is extended in HomeAdapter
+class DetailsLookup (private val recyclerView: RecyclerView) : ItemDetailsLookup<Long>() {
+    override fun getItemDetails(e: MotionEvent): ItemDetails<Long>? {
+        val view = recyclerView.findChildViewUnder(e.x, e.y)
+        if (view != null) {
+            val holder = recyclerView.getChildViewHolder(view)
+            if (holder is HomeAdapter.ItemViewHolder) {
+                return holder.getItemDetails()
+            }
+        }
+        return null
+    }
+}
+
+
+from apartment fragment/homefragments in general:
+ //create Selection tracker for tracking what is selected in recycler view (will use the onItemActivatedListener to either retrieve the items with checked boxes)
+        var tracker = SelectionTracker.Builder(
+            "my-selection-id",
+            recyclerView,
+            StableIdKeyProvider(recyclerView),
+            DetailsLookup(recyclerView),
+            StorageStrategy.createLongStorage())
+                //set onItemActivatedListener
+            .withOnItemActivatedListener { item, e ->
+                Toast.makeText(
+                    context,
+                    "Selected ItemId: " + item.toString(), Toast.LENGTH_SHORT
+                ).show()
+                //Log.d("TAG", "Selected ItemId: " + item.toString())
+                true
+            }.build()
+
+another one
+
+        lateinit var tracker: SelectionTracker<Long>
+        tracker = SelectionTracker.Builder(
+            "my-selection-id",
+            recyclerView,
+            StableIdKeyProvider(recyclerView),
+            DetailsLookup(recyclerView),
+            StorageStrategy.createLongStorage())
+                //set onItemActivatedListener
+            .withOnItemActivatedListener { item, e ->
+                item.selectionKey?.let { tracker.select(it) }
+                Toast.makeText(
+                    context,
+                    "Selected ItemId: " + item.toString(), Toast.LENGTH_SHORT
+                ).show()
+                true
+            }.build()
+
+
+From HomeAdapter:
+   //for returning item details when called in MyDetailsLookup class (check out the Selection Tracker in the Apt fragment to see)  creates a MyDetailsLookup Object aka ItemDetails<Long> object (see object below)
+            fun getItemDetails(): ItemDetailsLookup.ItemDetails<Long> = object : ItemDetailsLookup.ItemDetails<Long>() {
+                override fun getPosition(): Int = adapterPosition
+                override fun getSelectionKey(): Long? = itemId
+                override fun inSelectionHotspot(e: MotionEvent): Boolean {
+                    return true
+                }
+            }
